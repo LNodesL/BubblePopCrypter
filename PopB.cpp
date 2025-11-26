@@ -5,21 +5,6 @@
 
 int main(int argc, char* argv[]) {
 
-    if (IsDebuggerPresent()) {
-        // printf("attached debugger detected :(\n");
-        return -2;
-    }
-
-    if (checkNUMA()) {
-        // printf("NUMA memory allocate failed :( \n");
-        return -2;
-    }
-
-    if (checkResources() == false) {
-        // printf("possibly launched in sandbox :(\n");
-        return -2;
-    }
-
     char *mem = NULL;
     mem = (char *) malloc(100000000);
     if (mem != NULL) {
@@ -68,3 +53,4 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
+
